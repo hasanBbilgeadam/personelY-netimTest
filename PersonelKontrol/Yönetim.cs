@@ -2,6 +2,8 @@
 {
     public class Yönetim
     {
+        //y a =123
+        //y b = 123  
 
         private static Yönetim _yönetim; 
         private Yönetim()
@@ -23,18 +25,26 @@
 
         public List<Grup> GrupOluştur (List<Personel> personeller)
         {
-
+            //18
+            //5
+            //5
+            //5 
+            //3
             int count = 0;
             int grupNumara = 1;
             List<Grup> gruplar = new List<Grup>(); 
             Grup temp = new Grup(); 
             for (int i = 0; i < personeller.Count; i++)
             {
-                //18
-                if (count != 5)
+                //7 
+                //count 0 1 2 3 4 | count 2
+                //list  1 2 3 4 5 | 6 7
+                if (count < 5)
                 {
                     temp.Personeller.Add(personeller[i]);
                     ++count;
+                  
+
                 }
                 else
                 {
@@ -49,6 +59,11 @@
 
             }
 
+            if (count != 0)
+            {
+                gruplar.Add(temp);
+                temp.GrupAdı = "grup " + grupNumara;
+            }
 
             return gruplar; 
         }
